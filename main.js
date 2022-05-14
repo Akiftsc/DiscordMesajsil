@@ -126,7 +126,8 @@ body{
         margin-left: 30px;
         margin-right: 30px;
         padding-bottom: 12px;
-        color:#fff;
+        color:#fff !important;
+        -webkit-text-fill-color: #fff;
         background:#677BC4;
         font-size:14px;
         align-items: center;
@@ -218,11 +219,32 @@ body{
     footer a{
         color: aqua;
     }
+    
+.box {
+    width: 400px;
+    height: auto;
+    border: 2px solid #000;
+    margin: 0 auto 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  
+  .info {
+    background-color: #ddd;
+    border-color: #aaa; 
+  }
+  input{
+      color:white;
+  }
     </style>
 </head>
 <body>
     <div class="toolbar">
-        <div class="title">
+    <div class="info box">
+    <p style="color:red;font-weight:bold;">DİKKAT! EĞER 2 HESAPLA BERABER KULLANACAKSANIZ BOT ÇALIŞMAYACAKTIR. HESAPLARIN BİRİNİ KALDIRMAYI DENEYİN. SORUNU ÇÖZMEK İÇİN ELİMDEN GELDİĞİNDE ÇALIŞIYORUM...</p>
+  </div>
+        <div class="title" style="margin-bottom:50px;">
             <h1>Discord Mesaj silme</h1>
         </div>
         <div id="prime">
@@ -288,10 +310,8 @@ body{
     <footer>
         <pre>
         Kod Yazan : <a href="https://twitter.com/mathheadphones">Mehmet Akif Taşçı</a>
-        Tasarlayan : <a href="https://discord.gg/6Af2NDYjFp">Tarık Karaca</a>
-        <a href="https://discord.gg/6Af2NDYjFp" style="color:blueviolet;">Discord</a>
-        2021
-        </pre>
+        Tasarlayan : <a>Tarık Karaca</a>
+        2022
     </footer>
 </body>
 </html>
