@@ -375,7 +375,7 @@ body{
   popup.document.querySelector("button#getToken").onclick = (e) => {
     window.dispatchEvent(new Event("beforeunload"));
     popup.document.querySelector("input#authToken").value = JSON.parse(
-      popup.localStorage.token
+      popup.localStorage.MultiAccountStore
     );
   };
   popup.document.querySelector("button#getAuthor").onclick = (e) => {
