@@ -30,7 +30,297 @@ Kullanımı
       "Lanet olsun adamım açılır pencereyi engellemişsin tarayıcı ayarlarını düzenle !"
     );
   popup.document.write(/*html*/ `
-        <!DOCTYPE html><html lang="tr"><head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Document</title> <link rel="stylesheet" href="style.css"> <style>#prime button,body{background-color:#2f3136}#prime input,.box,.toolbar h1{text-align:center}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1;color:#dcddde;font-family:sans-serif;font-weight:600;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}button,input{border-style:hidden}.toolbar h1{font-size:45px}#prime{display:flex;flex-direction:row;margin-left:50px}#prime button{width:auto;height:40px;border-radius:5px;color:#fff;font-weight:500;transition:.5s}#prime button:hover{background:#272b30;color:#d6d6c7}#prime input{width:auto;height:25px;padding-bottom:12px;color:#fff!important;-webkit-text-fill-color:#fff;background:#677bc4;font-size:14px;align-items:center;justify-content:center;transition:.5s;border-radius:3px}#prime input:focus{background:rgba(114,137,218,.5)}#prime .box{display:flex;flex-direction:row;justify-content:center;align-items:center;align-content:center;border-radius:20px;background:#18191c;width:auto;height:auto;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin-top:30px;-webkit-box-shadow:0 10px 13px -7px #000,-3px 13px 44px 3px transparent;box-shadow:0 10px 13px -7px #000,-3px 13px 44px 3px transparent}#prime input,button{margin:13px;align-items:center;justify-content:center;cursor:pointer}#prime a,span{font-size:20px;color:#677bc4}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}.title{margin-top:50px}#filter{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;justify-content:flex-start!important;align-items:flex-start!important;align-content:flex-start!important;margin-bottom:50px}#button{display:flex;flex-direction:column!important;justify-content:center!important;align-items:center!important;margin-left:30px!important}#button #start{color:#43b581;width:80px}#button #stop{color:#f04747;width:80px}#button #clear{color:#faa61a;width:auto}footer{margin-top:150px;font-size:.75rem;font-family:'Open Sans',sans-serif}footer a{color:#0ff}.box{width:400px;height:auto;border:2px solid #000;margin:0 auto 15px;font-weight:700;border-radius:10px}.info{background-color:#ddd;border-color:#aaa}input{color:#fff}</style></head><body> <div class="toolbar"> <div class="info box"> <p style="color:red;font-weight:bold;">DİKKAT! EĞER 2 HESAPLA BERABER KULLANACAKSANIZ BOT ÇALIŞMAYACAKTIR. HESAPLARIN BİRİNİ KALDIRMAYI DENEYİN. SORUNU ÇÖZMEK İÇİN ELİMDEN GELDİĞİNDE ÇALIŞIYORUM...</p></div><div class="title" style="margin-bottom:50px;"> <h1>Discord Mesaj silme</h1> </div><div id="prime"> <span>Kişisel id'n <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Benzersiz-id'n-(Token)-nedir-%3F" title="Yardım"> ? </a> <div class="box"> <button id="getToken">Benzersiz id'n al.</button> <input type="password" id="authToken" placeholder="Kişisel id'in" autofocus> </span> </div><div class="title"> <span>Mesajları silinecek kişi <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Ki%C5%9Fi-id'si-nedir-%3F" title="Yardım">?</a></span> </div><div class="box"> <button id="getAuthor">Mesajları silinecek kişinin id'si</button> <br><input id="authorId" type="text" placeholder="Yazar id" priv> </div><div class="title"> <span class="help">Kanal id'si <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Kanal-id'si-nedir-%3F" title="Yardım">?</a> </div><div class="box"> <button id="getGuildAndChannel">Kanal id'ni al.</button><br><input id="guildId" type="text" placeholder="kimden" priv><br><input id="channelId" type="text" placeholder="kime" priv></span><br></span> </div><div class="title"> <span>İlk ve son mesaj<br></div><div class="box"> <input id="afterMessageId" type="text" placeholder="İlk mesaj id'si" priv><br><input id="beforeMessageId" type="text" placeholder="Son mesaj id'si" priv> </span> </div><div class="title"> <span>Filtre <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Filtre" title="Yardım">?</a><br></div><div class="box" id="filter"> <input id="content" type="text" placeholder="Filtre" priv><br><label><input id="hasLink" type="checkbox" class="checkbox">Sadece link</label><br><label><input id="hasFile" type="checkbox" class="checkbox">Sadece Dosya</label><br><label><input id="includeNsfw" type="checkbox">Güvenli olmayan içeriği dahil et.</label> </span> </div><center> <span id="kontrol" > Kontrol paneli <div class="box" id="button"> <button id="start">Başlat</button> <button id="stop" disabled>Durdur</button> <button id="clear"">Konsolu Temizle</button> <label><input id="redact" type="checkbox"><small>Hassas bilgileri gizle</small></label> <span></span> <label><input id="autoScroll" type="checkbox" checked><small>Oto.Kaydır</small></label> <span></span> </div></span> </center> </div></div></div></div><footer> <pre> Kod Yazan : <a href="https://twitter.com/akif2442">Mehmet Akif Taşçı</a> Tasarlayan : <a>Tarık Karaca</a> 2022 </footer></body></html>
+    <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input,button{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    
+}
+body{
+    background-color:#2F3136;
+    color:#dcddde;
+    font-family:sans-serif;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    } 
+    .toolbar h1{
+        font-size: 45px;
+        text-align:center;
+    }   
+    #prime{
+        display: flex;
+        flex-direction:row;
+        margin-left: 50px;
+
+    }
+    #prime button{
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #2F3136; 
+    color:rgb(255, 255, 255);
+    font-weight: 500;
+    transition: 500ms all;
+    }
+    #prime button:hover{
+        background: #272b30;
+        color:rgb(214, 214, 199);
+    }
+    #prime input{
+        width: auto;
+        height: 25px;
+        margin-left: 30px;
+        margin-right: 30px;
+        padding-bottom: 12px;
+        color:#fff !important;
+        -webkit-text-fill-color: #fff;
+        background:#677BC4;
+        font-size:14px;
+        align-items: center;
+        justify-content: center;
+        text-align: center; 
+        transition: 500ms all;
+        border-radius: 3px;
+    }
+    #prime input:focus{
+        background:rgba(114, 137, 218, .5);
+    }
+    #prime .box{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        border-radius:20px;
+        background: #18191C;
+        width: auto;
+        height: auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin-top: 30px;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, -3px 13px 44px 3px rgba(0,0,0,0); 
+        box-shadow: 0px 10px 13px -7px #000000, -3px 13px 44px 3px rgba(0,0,0,0);
+    }
+
+    #prime input,button{
+        margin: 13px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    #prime a,span{
+        font-size: 20px;
+        color: #677BC4;
+    }
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    .title{
+        margin-top: 50px;
+    }
+
+    /** Checkboxes **/
+    
+
+    #filter{
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        align-content: flex-start  !important;
+        margin-bottom: 50px;
+    }
+
+    #button{
+        display: flex;
+        flex-direction:column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-left: 30px !important;
+    }
+
+    #button #start{
+        color:#43b581;
+        width:80px;
+    }
+
+    #button #stop{
+        color:#F04747;
+        width:80px;
+    }
+    #button #clear{
+        color: #FAA61A;
+        width: auto;
+    }
+
+    footer{
+        margin-top:150px;
+        font-size:0.75rem;
+        font-family: 'Open Sans', sans-serif;
+    }
+    footer a{
+        color: aqua;
+    }
+    
+.box {
+    width: 400px;
+    height: auto;
+    border: 2px solid #000;
+    margin: 0 auto 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  
+  .info {
+    background-color: #ddd;
+    border-color: #aaa; 
+  }
+  input{
+      color:white;
+  }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+    <div class="info box">
+    <p style="color:red;font-weight:bold;">DİKKAT! EĞER 2 HESAPLA BERABER KULLANACAKSANIZ BOT ÇALIŞMAYACAKTIR. HESAPLARIN BİRİNİ KALDIRMAYI DENEYİN. SORUNU ÇÖZMEK İÇİN ELİMDEN GELDİĞİNDE ÇALIŞIYORUM...</p>
+  </div>
+        <div class="title" style="margin-bottom:50px;">
+            <h1>Discord Mesaj silme</h1>
+        </div>
+        <div id="prime">
+            <span>Kişisel id'n
+            <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Benzersiz-id'n-(Token)-nedir-%3F" title="Yardım">
+                ?
+            </a>
+            <div class="box">
+            <button id="getToken">Benzersiz id'n al.</button>
+                <input type="password" id="authToken" placeholder="Kişisel id'in" autofocus>
+            </span>
+            </div>
+            <div class="title">
+                <span>Mesajları silinecek kişi <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Ki%C5%9Fi-id'si-nedir-%3F" title="Yardım">?</a></span>
+            </div>
+                <div class="box">
+                <button id="getAuthor">Mesajları silinecek kişinin id'si</button>
+                    <br>
+                <input id="authorId" type="text" placeholder="Yazar id" priv>
+            </div>
+            <div class="title">
+            <span class="help">Kanal id'si <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Kanal-id'si-nedir-%3F" title="Yardım">?</a>
+            </div>
+                <div class="box">
+                    <button id="getGuildAndChannel">Kanal id'ni al.</button><br>
+                    <input id="guildId" type="text" placeholder="kimden" priv><br>
+                    <input id="channelId" type="text" placeholder="kime" priv></span><br>
+                </span>
+                </div>
+                <div class="title">
+                    <span>İlk ve son mesaj<br>
+                </div>
+                <div class="box">
+                    <input id="afterMessageId" type="text" placeholder="İlk mesaj id'si" priv><br>
+                    <input id="beforeMessageId" type="text" placeholder="Son mesaj id'si" priv>
+                </span>
+            </div>
+            <div class="title">
+                <span>Filtre <a href="https://github.com/Akiftsc/DiscordMesajsil/wiki/Filtre" title="Yardım">?</a><br>
+            </div>
+            <div class="box" id="filter">
+                <input id="content" type="text" placeholder="Filtre" priv><br>
+                    <label><input id="hasLink" type="checkbox" class="checkbox">Sadece link</label><br>
+                    <label><input id="hasFile" type="checkbox" class="checkbox">Sadece Dosya</label><br>
+                    <label><input id="includeNsfw" type="checkbox">Güvenli olmayan içeriği dahil et.</label>
+            </span>
+            </div>
+            <center>
+            <span id="kontrol" > Kontrol paneli
+                <div class="box" id="button">
+                    <button id="start">Başlat</button>
+                    <button id="stop" disabled>Durdur</button>
+                    <button id="clear"">Konsolu Temizle</button>
+                    <label><input id="redact" type="checkbox"><small>Hassas bilgileri gizle</small></label> <span></span>
+                    <label><input id="autoScroll" type="checkbox" checked><small>Oto.Kaydır</small></label> <span></span>
+                </div>
+            </span>
+            </center>
+        </div>
+    </div>
+    </div>
+    </div>
+    <footer>
+        <pre>
+        Kod Yazan : <a href="https://twitter.com/akif2442">Mehmet Akif Taşçı</a>
+        Tasarlayan : <a>Tarık Karaca</a>
+        2022
+    </footer>
+</body>
+</html>
     `);
 
   const logArea = popup.document.querySelector("pre");
